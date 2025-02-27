@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
 import { auth , googleProvider} from "../../firebase/firebase.config";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -13,3 +13,13 @@ export const login = () => async (dispatch) => {
     console.log(error);
   }
 };
+export const logout = () => async (dispatch) => {
+    try{
+        await signOut(auth);
+        dispatch({type: LOGOUT})
+
+    }
+    catch(err){
+        console.err(err);
+    }
+}

@@ -16,7 +16,7 @@ export const fetchNotes=()=>async(dispatch)=>{
         const notes = await response.data;
         console.log(response.data,"response")
 
-        const changednotes = Object.entries([notes]:{} )
+        const changednotes = Object.entries(notes)
         
         dispatch({type:FETCH_NOTES_SUCCESS,payload:changednotes});
         

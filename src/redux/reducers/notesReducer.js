@@ -9,7 +9,6 @@ const initState = {
 export const notesReducer=(state=initState,action)=>{
     switch(action.type){
         case FETCH_NOTES_SUCCESS:
-            const updatednotes = Object.entries(action.payload)
 
             return{
                 

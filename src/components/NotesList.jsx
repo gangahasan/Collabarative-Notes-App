@@ -4,6 +4,7 @@ import { deleteNote, fetchNotes } from '../redux/actions/noteActions';
 
 const NotesList = () => {
     const notes = useSelector((state) => state.notes.notes)
+    console.log(notes,"notes from list")
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -33,7 +34,7 @@ const NotesList = () => {
                 <h2>Title: {note.title}</h2>
                 <p>Content: {note.content}</p>
                 <p>TimeStamp: {note.timeStamp}</p>
-                
+
                 <button
                   style={{
                     backgroundColor: "red",
